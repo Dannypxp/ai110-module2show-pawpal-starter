@@ -29,9 +29,10 @@ classDiagram
         +modify_task(task_id, new_task)
         +remove_task(task_id)
         +add_priority(task_id, priority)
+        +create_plan()
     }
-            +create_plan()
-        }
+            
+        
 
         class Task {
             -title: str

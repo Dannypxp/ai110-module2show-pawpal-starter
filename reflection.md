@@ -2,11 +2,34 @@
 
 ## 1. System Design
 
+Three Core actions
+1. Add pet info
+2. Add Owner Info
+3. Make a task with time and priority
+
+Objects Needed 
+1. Owner
+    A - Name, Age, Address
+    M - Enter info, Edit info, Delete info
+2. Pet
+    A - Name, Breed, Age, Gender
+    M - Enter info, Edit info, Delete info
+3. Schedule
+    A - Task
+    M - Add Task, Modify Task, Remove Task, Add Priority, create plan
+4. Task
+    A - Title, Priority, duration
+    M - 
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+My initial UML design contains 4 classes (Owner, Pet, Schedule, Task) Pet belongs to owner, schedule belongs to owner, task belongs to schedule
 - What classes did you include, and what responsibilities did you assign to each?
-
+4 Classes
+Owner class holds basic info about the owner and lets them edit or add their info to their profile in the app
+Pet class holds basic info about the owners pet and allows the owner to change or add info
+Schedule class allows for tasks to be created and edited, included are priorities on those tasks, and a plan can be created
+Task class hold the name, duration and priority of those tasl
 **b. Design changes**
 
 - Did your design change during implementation?
