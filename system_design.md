@@ -30,28 +30,23 @@ classDiagram
         +remove_task(task_id)
         +add_priority(task_id, priority)
     }
+            +create_plan()
+        }
 
-    class Task {
-        -title: str
-        -duration_minutes: int
-        -priority: str
-    }
+        class Task {
+            -title: str
+            -duration_minutes: int
+            -priority: str
+        }
 
-    class Plan {
-        -plan: List[Task]
-        +create_plan(schedule)
-    }
-
-    Schedule --> Task
-    Plan --> Schedule
-    Owner "1" -- "*" Pet
-    Owner "1" -- "*" Plan
+        Schedule --> Task
+        Owner "1" -- "*" Pet
+        Owner "1" -- "*" Schedule
 ```
 
 ## System Overview
 
-- **Owner**: Manages owner information (name, age, address) with abilities to create, edit, and delete their profile
-- **Pet**: Represents a pet with attributes (name, breed, age, gender) and similar CRUD operations as Owner
-- **Schedule**: Manages a collection of tasks for a pet, allowing you to add, modify, remove tasks and adjust their priorities
-- **Task**: Individual pet care tasks with a title, duration, and priority level
-- **Plan**: Creates an optimized schedule by taking tasks from the Schedule and organizing them based on constraints
+ **Owner**: Manages owner information (name, age, address) with abilities to create, edit, and delete their profile
+ **Pet**: Represents a pet with attributes (name, breed, age, gender) and similar CRUD operations as Owner
+ **Task**: Individual pet care tasks with a title, duration, and priority level
+ **Schedule**: Manages a collection of tasks for a pet, allowing you to add, modify, remove tasks, and adjust priorities.
